@@ -62,13 +62,14 @@ set updatetime=300
 
 
 autocmd BufEnter * lua require'completion'.on_attach()
-autocmd CursorHold * silent lua vim.lsp.buf.hover()
+"autocmd CursorHold * silent lua vim.lsp.buf.hover()
 
 "use tab for autocomplete selection.
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gy <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.hover()<CR>
 
 " Telescope
